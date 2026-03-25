@@ -32,10 +32,3 @@ A simple interactive quiz application built with HTML, CSS, and JavaScript.
 
 This project is based on a tutorial from freeCodeCamp and codesistency.
 I built it as part of my learning journey.
-
-## 📌 Future Improvements
-
-* Add timer for each question
-* Add sound effects
-* Improve UI design
-* Make it mobile responsive
