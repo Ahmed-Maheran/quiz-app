@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Colors */
+  --clr-bg: #f5efe6;
+  --clr-container: #f6f5f3;
+
+  --clr-primary: #e86a33;
+  --clr-text: #333;
+  --clr-text-muted: #666;
+
+  --clr-answer: #f8f0e5;
+  --clr-answer-secondary: #eadbc8;
+  --clr-answer-hover: #dac0ae;
+
+  /* UI */
+  --radius: 0.75rem;
+
+  /* Shadow */
+  --shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+
+  /* Transition */
+  --transition: all 0.3s ease;
+}
+
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+  background: var(--clr-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  color: var(--clr-text);
+}
+
+/* CONTAINER */
+.container {
+  background-color: var(--clr-container);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 37.5rem;
+  overflow: hidden;
+  position: relative;
+  min-height: 400px;
+}
+
+/* SCREEN */
+.screen {
+  display: none;
+  padding: 2rem;
+  text-align: center;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* START SCREEN */
+#start-screen h1 {
+  color: var(--clr-primary);
+  margin-bottom: 1.3rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+#start-screen p {
+  color: var(--clr-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* QUIZ */
+.quiz-header {
+  margin-bottom: 2rem;
+}
+
+#question-text {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.quiz-info {
+  display: flex;
+  justify-content: space-between;
+  color: var(--clr-text-muted);
+  margin-bottom: 0.625rem;
+}
+
+/* ANSWERS */
+#answers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+}
+
+.answer-btn {
+  background-color: var(--clr-answer);
+  color: var(--clr-text);
+  border: 0.125rem solid var(--clr-answer-secondary);
+  border-radius: var(--radius);
+  padding: 1rem;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.answer-btn:hover {
+  background-color: var(--clr-answer-secondary);
+  border-color: var(--clr-answer-hover);
+}
+
+.answer-btn.incorrect {
+  background-color: #fff0f0;
+  border-color: #ffbdbd;
+  color: #dc3545;
+}
+
+.answer-btn.correct {
+  background-color: #e6fff0;
+  border-color: #a3f0c4;
+  color: #28a745;
+}
+
+/* PROGRESS */
+.progress-bar {
+  height: 0.625rem;
+  background-color: var(--clr-answer);
+  border-radius: 0.625rem;
+  overflow: hidden;
+  margin-top: 1.25rem;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--clr-primary);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* RESULT */
+#result-screen h1 {
+  color: var(--clr-primary);
+  margin-bottom: 2rem;
+}
+
+.result-info {
+  background-color: var(--clr-answer);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.result-info p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#result-message {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--clr-primary);
+}
+
+/* BUTTON */
+button {
+  background-color: var(--clr-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d45b28;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 480px) {
+  .screen {
+    padding: 1rem;
+  }
+  #start-screen h1 {
+    font-size: 2rem;
+  }
+  #question-text {
+    font-size: 1.3rem;
+  }
+  .answer-btn {
+    padding: 0.75rem;
+  }
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* this is from freecodecamp and codesistency not me */
